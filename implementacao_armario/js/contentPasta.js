@@ -1,49 +1,44 @@
 
 // ===================================================== premios
-
-
 // Array de imagens 
 const img_edit = [
-    'pasta/sticker.svg',
-    'pasta/poster.jpeg',
-    'pasta/3.svg',
-    'pasta/4.svg',
-    'pasta/5.svg',
-    'pasta/6.svg',
-    'pasta/7.svg',
-    'pasta/8.svg'
+    'pasta/sticker.svg',  // 0 a 9
+    'pasta/poster.jpeg',  // 10 a 19
+    'pasta/sticker.svg',  // 20 a 29
+    'pasta/sticker.svg',  // 30 a 39
+    'pasta/sticker.svg',  // 40 a 49
+    'pasta/sticker.svg',  // 50 a 59
+    'pasta/sticker.svg'   // 60+
 ];
 
-// define qual e a imagem consoante os pontos
+// função que retorna todas as imagens até o nível atual de pontos
 function sistemaPontos(pontos) {
-
-    if (pontos >= 0 && pontos < 10) {
-        return img_edit[0]; // 0 a 9
-    } else if (pontos >= 10 && pontos < 20) {
-        return img_edit[1]; // 10 a 19
-    } else if (pontos >= 20 && pontos < 30) {
-        return img_edit[2]; // 20 a 29
-    } else if (pontos >= 30 && pontos < 40) {
-        return img_edit[3]; // 30 a 39
-    } else if (pontos >= 40 && pontos < 50) {
-        return img_edit[4]; // 40 a 49
-    } else if (pontos >= 50 && pontos < 60) {
-        return img_edit[5]; //50 a 59
-    } else {
-        return img_edit[6]; // 60++
+    const imagensParaMostrar = [];
+    
+    // cada imagem representa um intervalo de 10 pontos
+    let indexMax = Math.floor(pontos / 10);
+    
+    // garantir que não ultrapassamos o número de imagens
+    indexMax = Math.min(indexMax, img_edit.length - 1);
+    
+    for (let i = 0; i <= indexMax; i++) {
+        imagensParaMostrar.push(img_edit[i]);
     }
+
+    return imagensParaMostrar;
 }
 
-// simulacao
-let pontos = 5;
+// Simulação de pontos
+let pontos = 23;
 
-// define qual e a imagem consoante os pontos atuais (simulacao)
-const imagemSelecionada = sistemaPontos(pontos);
+// Obtém as imagens correspondentes
+const imagensSelecionadas = sistemaPontos(pontos);
 
-// exibe imagem
+// Mostra todas as imagens no container
 const edit_container = document.getElementById('editoriais');
-const img = document.createElement('img');
-img.src = imagemSelecionada;
-img.alt = 'escala de pontos'; // Adicione uma descrição acessível aqui
-edit_container.appendChild(img);
-
+imagensSelecionadas.forEach((src) => {
+    const img = document.createElement('img');
+    img.src = src;
+    img.alt = 'escala de pontos'; // acessibilidade
+    edit_container.appendChild(img);
+});
