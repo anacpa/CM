@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    background-color: #477493;
+
+}
+
+main {
+    display: flex;
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+
+    /* grid geral, dividir o ecra, 
+       dentro de cada grupo subdividir a sua area */
+
+}
+
+/* ======================== COLUNA ======================== */
+
+#coluna {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+#coluna #seta_back img {
+    width: 100%;
+}
+
+#coluna #escala_pontos img {
+    width: 65%;
+
+}
+
+
+
+/* ======================== ARMARIO (base) ======================== */
+
+#armario {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 50% 40% 10%;
+    grid-template-rows: 100%;
+}
+
+#armario_img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#armario #armario_main {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#armario #armario_main #armario_img img {
+    width: 100%;
+    grid-column: 1 / 3;
+    position: relative;
+}
+
+#armario_imgsvg {
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ======================== ARMARIO (personalizar) ======================== */
+
+#armario #personalizar_img {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+#area_armario {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+/* ---- itens 1x1 sizes ----*/
+/*
+#personalizar_img #capacete_img{
+    width: 100px;
+    height: 100px;
+}
+
+#personalizar_img #chapeu_img{
+    width: 100px;
+    height: 100px;
+}
+
+#personalizar_img #folhas_img{
+    width: 30px;
+    height: 30px;
+}
+
+#personalizar_img #meias_img{
+    width: 10px;
+    height: 10px;
+}
+
+#personalizar_img #mochila_img{
+    width: 50px;
+    height: 50px;
+}
+
+#personalizar_img #oculos_img{
+    width: 100px;
+    height: 100px;
+}
+
+#personalizar_img #ursinho_img{
+    width: 100px;
+    height: 100px;
+}
+*/
+
+/* ---- itens 1x1 posicoes ----*/
+/*
+
+#armario #personalizar_img #capacete_img img {
+    width: 8%;
+    top: 180px;
+}
+
+#armario #personalizar_img #chapeu_img img {
+    top: 590px;
+    right: 0px;
+    left: 1100px; 
+    rotate: -10deg;
+}
+
+#armario #personalizar_img #folhas_img img {
+    width: 5%;
+    top: 180px;
+    right: 0px;
+    left: 1250px; 
+}
+
+#armario #personalizar_img #meias_img img {
+    width: 4%;
+    top: 340px;
+    right: 0px;
+    left: 1200px; 
+    rotate: 15deg;
+}
+
+#armario #personalizar_img #mochila_img img {
+    top: 310px;
+    right: 0px;
+    left: 1315px; 
+    rotate: 8deg;
+}
+
+#armario #personalizar_img #oculos_img img { top: 310px;
+    top: 480px;
+    right: 0px;
+    left: 1200px; 
+    rotate: 10deg;
+}
+
+#armario #personalizar_img #ursinho_img img {
+    width: 7%;
+    top: 410px;
+    right: 0px;
+    left: 980px; 
+    rotate: -30deg;
+}
+
+*/
+
+
+/* ======================== BOTOES ======================== */
+
+#armario #botoesSP {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+#armario #botoesSP img {
+    margin: 10%
+}
+
+
+#armario #botao_pasta {
+    margin-top: auto;
+    cursor: pointer;
+}
+
+#armario #botao_pasta:hover {
+    filter: drop-shadow(0px 4px 4px #60C3F1);
+    /* width: 110%;
+   height: auto; */
+}
+
+
+#armario #botao_som img {
+    width: 50%;
+}
+
+#coluna #seta_back img {
+    width: 50%;
+    margin: 10%;
+}
+
+
+
+/* ======================== PASTA ======================== */
+
+#contentGeral_pasta {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3); /* fundo escurecido */
+    z-index: 1050;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#contentGeral_pasta.content_pasta {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#content_pasta {
+    position: relative; /* necessário para posicionamento absoluto interno */
+    background-color: rgba(96, 195, 241, 0.88);
+    border: 8px solid #FFF;
+    border-radius: 38px;
+    padding: 20px;
+    width: 700px;
+    height: 500px;
+    /* text-align: center; */
+}
+
+/* Estilo para o botão fechar no fundo e centrado */
+#fechar_pasta {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+

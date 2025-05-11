@@ -1,0 +1,56 @@
+function makeDraggable(element) {
+    let isDragging = false;
+    let offsetX, offsetY;
+
+    element.style.cursor = "grab";
+    element.style.position = "absolute";
+    element.style.transition = "transform 0.3s ease, left 0.2s ease, top 0.2s ease";
+    element.style.width = '120px';
+
+    element.addEventListener("mousedown", function (e) {
+        isDragging = true;
+        element.style.cursor = "grabbing";
+        e.preventDefault();
+        offsetX = e.clientX - element.getBoundingClientRect().left;
+        offsetY = e.clientY - element.getBoundingClientRect().top;
+        element.style.zIndex = 1000;
+    });
+
+    document.addEventListener("mousemove", function (e) {
+        if (isDragging) {
+            let newX = e.clientX - offsetX;
+            let newY = e.clientY - offsetY;
+
+            newX = Math.max(0, Math.min(newX, window.innerWidth - element.clientWidth));
+            newY = Math.max(0, Math.min(newY, window.innerHeight - element.clientHeight));
+
+            element.style.left = newX + "px";
+            element.style.top = newY + "px";
+        }
+    });
+
+    document.addEventListener("mouseup", function () {
+        if (!isDragging) return;
+        isDragging = false;
+        element.style.cursor = "grab";
+    });
+}
+
+window.addEventListener("load", () => {
+    const area = document.getElementById("area_armario");
+    const elements = document.querySelectorAll('#personalizar_img .p_img img');
+
+    elements.forEach(el => {
+        area.appendChild(el); // Coloca dentro da área do armário
+
+        const maxX = area.clientWidth - 120;
+        const maxY = area.clientHeight - 120;
+
+        const randX = Math.random() * maxX;
+        const randY = Math.random() * maxY;
+
+        el.style.left = `${randX}px`;
+        el.style.top = `${randY}px`;
+        makeDraggable(el);
+    });
+});
