@@ -14,13 +14,13 @@ const img_edit = [
 // função que retorna todas as imagens até o nível atual de pontos
 function sistemaPontos(pontos) {
     const imagensParaMostrar = [];
-    
+
     // cada imagem representa um intervalo de 10 pontos
     let indexMax = Math.floor(pontos / 10);
-    
+
     // garantir que não ultrapassamos o número de imagens
     indexMax = Math.min(indexMax, img_edit.length - 1);
-    
+
     for (let i = 0; i <= indexMax; i++) {
         imagensParaMostrar.push(img_edit[i]);
     }
@@ -28,17 +28,30 @@ function sistemaPontos(pontos) {
     return imagensParaMostrar;
 }
 
-// Simulação de pontos
-let pontos = 23;
+document.addEventListener('DOMContentLoaded', () => {
+    const pontos = 23;
+    const imagensSelecionadas = sistemaPontos(pontos);
+    const edit_container = document.getElementById('editoriais');
 
-// Obtém as imagens correspondentes
-const imagensSelecionadas = sistemaPontos(pontos);
+    imagensSelecionadas.forEach((src) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'escala de pontos';
 
-// Mostra todas as imagens no container
-const edit_container = document.getElementById('editoriais');
-imagensSelecionadas.forEach((src) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.alt = 'escala de pontos'; // acessibilidade
-    edit_container.appendChild(img);
+        // Adiciona evento de clique para download
+        img.addEventListener('click', () => {
+            const confirmar = confirm('Quer guardar esta imagem?');
+
+            if (confirmar) {
+                const link = document.createElement('a');
+                link.href = src;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+
+
+        edit_container.appendChild(img);
+    });
 });

@@ -88,98 +88,6 @@ main {
     pointer-events: auto;
 }
 
-/* ---- itens 1x1 sizes ----*/
-/*
-#personalizar_img #capacete_img{
-    width: 100px;
-    height: 100px;
-}
-
-#personalizar_img #chapeu_img{
-    width: 100px;
-    height: 100px;
-}
-
-#personalizar_img #folhas_img{
-    width: 30px;
-    height: 30px;
-}
-
-#personalizar_img #meias_img{
-    width: 10px;
-    height: 10px;
-}
-
-#personalizar_img #mochila_img{
-    width: 50px;
-    height: 50px;
-}
-
-#personalizar_img #oculos_img{
-    width: 100px;
-    height: 100px;
-}
-
-#personalizar_img #ursinho_img{
-    width: 100px;
-    height: 100px;
-}
-*/
-
-/* ---- itens 1x1 posicoes ----*/
-/*
-
-#armario #personalizar_img #capacete_img img {
-    width: 8%;
-    top: 180px;
-}
-
-#armario #personalizar_img #chapeu_img img {
-    top: 590px;
-    right: 0px;
-    left: 1100px; 
-    rotate: -10deg;
-}
-
-#armario #personalizar_img #folhas_img img {
-    width: 5%;
-    top: 180px;
-    right: 0px;
-    left: 1250px; 
-}
-
-#armario #personalizar_img #meias_img img {
-    width: 4%;
-    top: 340px;
-    right: 0px;
-    left: 1200px; 
-    rotate: 15deg;
-}
-
-#armario #personalizar_img #mochila_img img {
-    top: 310px;
-    right: 0px;
-    left: 1315px; 
-    rotate: 8deg;
-}
-
-#armario #personalizar_img #oculos_img img { top: 310px;
-    top: 480px;
-    right: 0px;
-    left: 1200px; 
-    rotate: 10deg;
-}
-
-#armario #personalizar_img #ursinho_img img {
-    width: 7%;
-    top: 410px;
-    right: 0px;
-    left: 980px; 
-    rotate: -30deg;
-}
-
-*/
-
 
 /* ======================== BOTOES ======================== */
 
@@ -209,6 +117,7 @@ main {
 
 
 #armario #botao_som img {
+    display: none;
     width: 50%;
 }
 
@@ -251,6 +160,14 @@ main {
     height: 500px;
     /* text-align: center; */
 }
+
+#editoriais img {
+    width: 100px;   /* ou o tamanho que quiser */
+    height: auto;   /* mantém a proporção */
+    object-fit: contain;
+    margin: 5px;
+}
+
 
 /* Estilo para o botão fechar no fundo e centrado */
 #fechar_pasta {
