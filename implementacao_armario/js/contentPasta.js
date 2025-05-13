@@ -45,6 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (confirmar) {
                 const link = document.createElement('a');
                 link.href = src;
+                link.download = src.split('/').pop(); // nome do ficheiro
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
