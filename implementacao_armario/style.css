@@ -70,6 +70,22 @@ main {
     pointer-events: none;
 }
 
+/* ======================== MONSTRO ======================== */
+#monstro_img {
+    position: absolute;
+    top: 10%; /* Ajusta conforme necessário */
+    left: 28%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    z-index: 1;
+    pointer-events: none;
+}
+
+#monstro_img img {
+    width: 80px; /* ou 10%, 15% — ajusta como quiser */
+    height: auto;
+}
+
+
 /* ======================== ARMARIO (personalizar) ======================== */
 
 #armario #personalizar_img {
