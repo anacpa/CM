@@ -19,16 +19,18 @@ function draw() {
 
     if (volume > 0.05) {
         pontuacao += int(pontos);
+        // Atualizar o localStorage sempre que a pontuação muda
+        localStorage.setItem("pontuacaoAtual", pontuacao);
     }
 
     fill(255);
-    text("POINTS", 90, height/4*3);
+    text("POINTS", 90, height / 4 * 3);
 
     fill(200, 0, 0);
     noStroke();
-    rect(width/4, height-25, volume * 300, 25);
+    rect(width / 4, height - 25, volume * 300, 25);
 
     fill(0);
     textAlign(CENTER);
-    text(pontuacao, 85, height-10);
+    text(pontuacao, 85, height - 10);
 }

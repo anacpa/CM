@@ -1,7 +1,7 @@
 //Arrays que inicializam as imagens.
 
-let doors = ['/portas/1.gif', '/portas/2.gif', '/portas/3.gif'];
-let person = ['/personagens/1.png', '/personagens/3.png', '/personagens/4.png'];
+let doors = ['portas/1.gif', 'portas/2.gif', 'portas/3.gif'];
+let person = ['personagens/1.png', 'personagens/3.png', 'personagens/4.png'];
 
 
 //ARRAY DAS CRIANÇAS

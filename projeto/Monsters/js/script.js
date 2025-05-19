@@ -12,9 +12,8 @@ const img_escala = [
     'imagens/coluna/8.svg'
 ];
 
-// define qual e a imagem consoante os pontos
+// Função que define qual imagem mostrar consoante os pontos
 function sistemaPontos(pontos) {
-  
     if (pontos >= 0 && pontos < 10) {
         return img_escala[0]; // 0 a 9
     } else if (pontos >= 10 && pontos < 20) {
@@ -26,25 +25,37 @@ function sistemaPontos(pontos) {
     } else if (pontos >= 40 && pontos < 50) {
         return img_escala[4]; // 40 a 49
     } else if (pontos >= 50 && pontos < 60) {
-        return img_escala[5]; //50 a 59
+        return img_escala[5]; // 50 a 59
+    } else if (pontos >= 60 && pontos < 70) {
+        return img_escala[6]; // 60 a 69
     } else {
-        return img_escala[6]; // 60++
+        return img_escala[7]; // 70++
     }
 }
 
-// simulacao
-let pontos = 45; 
+// ===============================
+// Buscar a pontuação guardada pelo pontuacao.js
 
-// define qual e a imagem consoante os pontos atuais (simulacao)
+let pontos = parseInt(localStorage.getItem("pontuacaoAtual")) || 0;
+
+// Mostrar no console para debug (podes remover se quiseres)
+console.log("Pontuação atual:", pontos);
+
+// ===============================
+// Definir qual imagem mostrar consoante os pontos atuais
+
 const imagemSelecionada = sistemaPontos(pontos);
 
-// exibe imagem
+// ===============================
+// Exibir a imagem na página
+
 const escala_container = document.getElementById('escala_pontos');
-const img = document.createElement('img');
-img.src = imagemSelecionada;
-img.alt = 'escala de pontos'; // Adicione uma descrição acessível aqui
-escala_container.appendChild(img);
 
-
-
-// =================================== .
+if (escala_container) {
+    const img = document.createElement('img');
+    img.src = imagemSelecionada;
+    img.alt = 'Escala de pontos';
+    escala_container.appendChild(img);
+} else {
+    console.warn("Elemento 'escala_pontos' não encontrado na página.");
+}
