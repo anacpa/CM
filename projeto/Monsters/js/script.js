@@ -2,14 +2,14 @@
 
 // Array de imagens da coluna
 const img_escala = [
-    'coluna/1.svg',
-    'coluna/2.svg',
-    'coluna/3.svg',
-    'coluna/4.svg',
-    'coluna/5.svg',
-    'coluna/6.svg',
-    'coluna/7.svg',
-    'coluna/8.svg'
+    'imagens/coluna/1.svg',
+    'imagens/coluna/2.svg',
+    'imagens/coluna/3.svg',
+    'imagens/coluna/4.svg',
+    'imagens/coluna/5.svg',
+    'imagens/coluna/6.svg',
+    'imagens/coluna/7.svg',
+    'imagens/coluna/8.svg'
 ];
 
 // define qual e a imagem consoante os pontos

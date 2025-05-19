@@ -2,13 +2,13 @@
 // ===================================================== premios
 // Array de imagens 
 const img_edit = [
-    'pasta/sticker.svg',  // 0 a 9
-    'pasta/poster.jpeg',  // 10 a 19
-    'pasta/sticker.svg',  // 20 a 29
-    'pasta/sticker.svg',  // 30 a 39
-    'pasta/sticker.svg',  // 40 a 49
-    'pasta/sticker.svg',  // 50 a 59
-    'pasta/sticker.svg'   // 60+
+    'imagens/pasta/sticker.svg',  // 0 a 9
+    'imagens/pasta/poster.jpeg',  // 10 a 19
+    'imagens/pasta/sticker.svg',  // 20 a 29
+    'imagens/pasta/sticker.svg',  // 30 a 39
+    'imagens/pasta/sticker.svg',  // 40 a 49
+    'imagens/pasta/sticker.svg',  // 50 a 59
+    'imagens/pasta/sticker.svg'   // 60+
 ];
 
 // função que retorna todas as imagens até o nível atual de pontos
