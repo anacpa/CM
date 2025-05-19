@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 127.15 211.36">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #bc1d1d;
+      }
+
+      .cls-2 {
+        fill: #e5d33b;
+      }
+
+      .cls-3 {
+        stroke: #9addf7;
+        stroke-miterlimit: 10;
+        stroke-width: 5px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #27a6d8;
+      }
+
+      .cls-5 {
+        fill: #a5a5a5;
+      }
+    </style>
+  </defs>
+  <g id="portas_c_frame_fechadas" data-name="portas c/frame fechadas">
+    <g id="_10" data-name="10">
+      <rect class="cls-4" x="13.75" y="24.67" width="98.69" height="186.51"/>
+      <g>
+        <rect class="cls-3" x="26.55" y="37.11" width="74.65" height="17.82"/>
+        <rect class="cls-3" x="26.52" y="181.49" width="76.69" height="17.82"/>
+        <rect class="cls-3" x="27.06" y="65.18" width="74.13" height="105.3"/>
+      </g>
+      <path class="cls-2" d="M108,142.02c-.55.29-1.82-.66-3.59-2.36-2.72-2.77-6.35-6.13-8.33-9.6-3.48-6.15,1.52-10.5,5.9-6.56,3.76,3.52,4.7,10.06,5.98,14.69.46,2.1.57,3.47.09,3.79l-.06.04Z"/>
+      <g>
+        <polygon class="cls-5" points="4.23 211.36 13.75 211.18 13.75 24.67 112.45 24.67 112.45 211.18 122.19 211.36 127.15 14.81 115.91 15.15 89.53 4.77 78.3 7.66 71.66 0 57.02 0 50.89 7.66 41.02 5.62 12.09 14.98 0 14.81 4.23 211.36"/>
+        <ellipse class="cls-1" cx="63" cy="10.19" rx="5.35" ry="4.45"/>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+padding - espaço à volta do conteúdo do elemento (dentro).
+margin - espaço à volta do elemento (fora).
+
+grid - rows AND columns.
+flexbox - rows OR columns
+
+A grid always consists of:
+
+Grid Container - the parent (container) <div> element.
+Grid Items - the items inside the container <div>.
+
+LAYOUT MODES FOR FLEXBOX:
+
+Block, for sections in a webpage
+Inline, for text
+Table, for two-dimensional table data
+Positioned, for explicit position of an element
+
+
+//CÓDIGO JAVASCRIPT DA PÁGINA DO NÍVEL 1.
+
+const numImagens = 10; //aqui usam uma variável à parte para indicar o número  de imagens, correspondente ao número de elem,entos do array.
+
+for (let i = 0; i < numImagens; i++) {
+    // 3. Selecionar imagem aleatória do array
+    const imagemEscolhida = imagens[Math.floor(Math.random() * imagens.length)];
+
+    // 4. Criar um elemento <img>
+    const img = document.createElement('img');
+    img.src = imagemEscolhida;
+    img.className = 'imagem';
+
+    // 5. Posicionar aleatoriamente na tela (usando CSS inline)
+    img.style.left = `${Math.random() * window.innerWidth}px`;
+    img.style.top = `${Math.random() * window.innerHeight}px`;
+
+    // 6. Adicionar ao <body>
+    document.body.appendChild(img);
+
