@@ -2,7 +2,7 @@ let mic;
 let pontuacao = 0;
 
 function setup() {
-    let canvas = createCanvas(400, 300);
+    let canvas = createCanvas(150, 300);
     canvas.parent('jogo'); // Insere o canvas dentro da div #jogo
     mic = new p5.AudioIn();
     mic.start();
@@ -22,9 +22,14 @@ function draw() {
     }
 
     fill(255);
-    text("Volume: " + nf(volume, 0, 3), width / 2, height / 3);
-    text("Pontuação: " + pontuacao, width / 2, height / 2);
+    text("POINTS", 90, height/4*3);
 
     fill(200, 0, 0);
-    rect(50, height - 50, volume * 300, 20);
+    noStroke();
+    rect(width/4, height-25, volume * 300, 25);
+
+    fill(0);
+    textAlign(CENTER);
+    text(pontuacao, 85, height-10);
 }
+
