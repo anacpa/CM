@@ -6,7 +6,7 @@ body{
     padding: 0;
     overflow: hidden;
     background-image: url("resources/background_fac.png");
-    background-size: 100% 183%;
+    background-size: 100% 827%;
 }
 
 #seta{
@@ -15,18 +15,28 @@ body{
     position: relative;
 }
 
-#capsula{
+#capsula {
+    position: absolute;
+    bottom: -50px; /* distancia do fundo */
+    right: 120px;  /* distancia da direita */
+    width: 80px;  /* ajusta conforme o tamanho desejado */
     transform: rotate(90deg);
-    margin: 80px;
-    width: 10%;
-    position: relative;
+}
+
+#capsula img {
+    width: 100%;
+    height: auto;
 }
 
 main{
-    width: 50%;
-    height: 50%;
+    width: 100%;
+    height: 100%;
 }
 
 canvas {
-    display: block;
+    position: absolute;
+    bottom: 52px; /* igual ao da cápsula */
+    right: 97px;  /* ajusta até ficar alinhado à esquerda da cápsula */
+    width: 100px;  /* define um tamanho fixo ou como preferires */
+    height: auto;
 }
