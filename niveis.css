@@ -18,8 +18,8 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-top:2%;
-    margin-left: 10%;
+    margin-top:5%;
+    margin-left: 7%;
 }
 
  .items{
@@ -28,9 +28,9 @@ body {
 }
 
  #m1, #m2, #m3{
-     width: 70%;
-     height: 90%;
-     gap: 12%;
+     width: 80%;
+     height: 100%;
+     gap: 40%;
  }
 
 
