@@ -6,6 +6,7 @@ function makeDraggable(element) {
     element.style.position = "absolute";
     element.style.transition = "transform 0.3s ease, left 0.2s ease, top 0.2s ease";
     element.style.width = '120px';
+    element.style.zIndex = '100';
 
     element.addEventListener("mousedown", function (e) {
         isDragging = true;
