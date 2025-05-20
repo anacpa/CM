@@ -1,0 +1,197 @@
+body {
+    margin: 0;
+    background-color: #477493;
+
+}
+
+main {
+    display: flex;
+
+    width: 100%;
+    display: grid;
+    grid-template-columns: 25% 75%;
+
+    /* grid geral, dividir o ecra, 
+       dentro de cada grupo subdividir a sua area */
+
+}
+
+/* ======================== COLUNA ======================== */
+
+#coluna {
+    grid-column: 1;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+#coluna #seta_back img {
+    width: 100%;
+}
+
+#coluna #escala_pontos img {
+    width: 65%;
+
+}
+
+
+
+/* ======================== ARMARIO (base) ======================== */
+
+#armario {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 50% 40% 10%;
+    grid-template-rows: 100%;
+}
+
+#armario_img {
+    position: relative;
+    width: 100%;
+    height: auto;
+}
+
+#armario #armario_main {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#armario #armario_main #armario_img img {
+    width: 100%;
+    grid-column: 1 / 3;
+    position: relative;
+}
+
+#armario_imgsvg {
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ======================== MONSTRO ======================== */
+#monstro_img {
+    position: absolute;
+    top: 10%; /* Ajusta conforme necessário */
+    left: 28%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    z-index: 1;
+    pointer-events: none;
+}
+
+#monstro_img img {
+    width: 80px; /* ou 10%, 15% — ajusta como quiser */
+    height: auto;
+}
+
+
+/* ======================== ARMARIO (personalizar) ======================== */
+
+#armario #personalizar_img {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+
+#area_armario {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+
+/* ======================== BOTOES ======================== */
+
+#armario #botoesSP {
+    grid-column: 3;
+    grid-row: 1;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+}
+
+#armario #botoesSP img {
+    margin: 10%
+}
+
+
+#armario #botao_pasta {
+    margin-top: auto;
+    cursor: pointer;
+}
+
+#armario #botao_pasta:hover {
+    filter: drop-shadow(0px 4px 4px #60C3F1);
+    /* width: 110%;
+   height: auto; */
+}
+
+
+#armario #botao_som img {
+    display: none;
+    width: 50%;
+}
+
+#coluna #seta_back img {
+    width: 50%;
+    margin: 10%;
+}
+
+
+
+/* ======================== PASTA ======================== */
+
+#contentGeral_pasta {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3); /* fundo escurecido */
+    z-index: 1050;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#contentGeral_pasta.content_pasta {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+#content_pasta {
+    position: relative; /* necessário para posicionamento absoluto interno */
+    background-color: rgba(96, 195, 241, 0.88);
+    border: 8px solid #FFF;
+    border-radius: 38px;
+    padding: 20px;
+    width: 700px;
+    height: 500px;
+    /* text-align: center; */
+}
+
+#editoriais img {
+    width: 100px;   /* ou o tamanho que quiser */
+    height: auto;   /* mantém a proporção */
+    object-fit: contain;
+    margin: 5px;
+}
+
+
+/* Estilo para o botão fechar no fundo e centrado */
+#fechar_pasta {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+

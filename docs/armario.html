@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Armário</title>
+    <link rel="stylesheet" href="armario.css">
+</head>
+
+<body>
+    <main>
+
+        <!-- coluna -->
+        <section id="coluna">
+            <div id="seta_back">
+                <a href="main.html"><img src="imagens/sinais/seta.svg" alt="seta_back"></a>
+            </div>
+            <div id="escala_pontos"></div>
+        </section>
+
+        <!-- armario -->
+        <section id="armario">
+            <div id="armario_main">
+                <div id="armario_img">
+                    <img src="imagens/armario.svg" alt="armario" id="armario_imgsvg">
+                    <div id="area_armario"></div> <!-- <- Nova div que vamos usar como limite -->
+                    <div id="monstro_img">
+                        <img src="imagens/monstro.svg" alt="monstro" id="monstro_imgsvg">
+                    </div>
+                </div>
+            </div>
+            <div id="personalizar_img">
+                <div id="capacete_img" class="p_img">
+                    <img src="imagens/personalizar/capacete.svg" alt="capacete">
+                </div>
+                <div id="chapeu_img" class="p_img">
+                    <img src="imagens/personalizar/chapeu.svg" alt="chapeu">
+                </div>
+                <div id="folhas_img" class="p_img">
+                    <img src="imagens/personalizar/folhas.svg" alt="folhas">
+                </div>
+                <div id="meias_img" class="p_img">
+                    <img src="imagens/personalizar/meias.svg" alt="meias">
+                </div>
+                <div id="mochila_img" class="p_img">
+                    <img src="imagens/personalizar/mochila.svg" alt="mochila">
+                </div>
+                <div id="oculos_img" class="p_img">
+                    <img src="imagens/personalizar/oculos.svg" alt="oculos">
+                </div>
+                <div id="ursinho_img" class="p_img">
+                    <img src="imagens/personalizar/ursinho.svg" alt="ursinho">
+                </div>
+            </div>
+
+            <div id="botoesSP">
+                <div id="botao_som">
+                    <img src="imagens/sinais/som.svg" alt="botao_som">
+                </div>
+
+                <div>
+                    <img src="imagens/sinais/pasta.svg" alt="botao_pasta" id="botao_pasta">
+                </div>
+
+
+            </div>
+
+            <div id="pasta">
+                <div id="contentGeral_pasta">
+                    <div id="content_pasta">
+                        <div id="editoriais"></div>
+                        <img src="imagens/pasta/botao_fechar2.svg" id="fechar_pasta">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script src="js/script.js"></script>
+    <script src="js/arrastar.js"></script>
+    <script src="js/abrirPasta.js"></script>
+    <script src="js/contentPasta.js"></script>
+
+</body>
+
+</html>
