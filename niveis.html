@@ -96,6 +96,24 @@ if (nivel3Desbloqueado) {
 });
 
 
+
+// === LIMPAR LOCALSTORAGE QUANDO FECHAR ABA ===
+let beforeUnloadTime = 0;
+
+window.addEventListener('beforeunload', function () {
+    beforeUnloadTime = new Date().getTime();
+});
+
+window.addEventListener('unload', function () {
+    const now = new Date().getTime();
+    if (now - beforeUnloadTime > 50) {
+        // Apaga apenas quando o utilizador fecha a aba
+        localStorage.removeItem('nivel2Desbloqueado');
+        localStorage.removeItem('nivel3Desbloqueado');
+    }
+});
+
+
  </script>
 </body>
 </html>
