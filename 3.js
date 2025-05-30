@@ -32,14 +32,14 @@ function draw() {
     // Suavização manual (exponencial)
     volumeSuavizado = lerp(volumeSuavizado, volume, 0.05);
 
-    // Mapeia para escala de 0 a 500
-    let pontos = map(volumeSuavizado, 0.01, 1, 0, 500);
-    pontos = constrain(pontos, 0, 500);
+    // Mapeia para escala de 0 a 2000
+    let pontos = map(volumeSuavizado, 0.01, 1, 0, 2000);
+    pontos = constrain(pontos, 0, 2000);
 
     // Aumenta a pontuação lentamente, com limite
-    if (volumeSuavizado > 0.05 && pontuacao < 500) {
+    if (volumeSuavizado > 0.05 && pontuacao < 2000) {
         pontuacao += 1; // ajusta esse valor se quiser mais rápido/lento
-        pontuacao = constrain(pontuacao, 0, 500);
+        pontuacao = constrain(pontuacao, 0, 2000);
     }
 
     // BARRA DE PROGRESSO
@@ -48,7 +48,7 @@ function draw() {
 
     fill(200, 0, 0);
     noStroke();
-    let larguraBarra = map(pontuacao, 0, 500, 0, 150); // usa pontuação real
+    let larguraBarra = map(pontuacao, 0, 2000, 0, 150); // usa pontuação real
     rect(width / 4, height - 25, larguraBarra, 25);
 
     fill(0);

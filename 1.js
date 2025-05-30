@@ -6,6 +6,8 @@ let tempoInicio;
 let jogoTerminado = false;
 let volumeMinimoParaPassar = 0.05;
 let gritoAtivo = false; // novo estado para controlar o grito
+let limitePassagem = volumeMinimoParaPassar;
+
 
 function millis() {
     return new Date().getTime();
@@ -63,13 +65,10 @@ function draw() {
 
     // LÓGICA FINAL DO JOGO
 if (!jogoTerminado && pontuacao === 500) {
-    if (pontuacao >= 250) {
-    localStorage.setItem('nivel2Desbloqueado', true);
-  } // verifica se a pontuação é suficiente para desbloquear o nível 2
     jogoTerminado = true;
+    localStorage.setItem('nivel2Desbloqueado', true);
     alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
     window.location.href = "2.html";
-
 } else if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
     jogoTerminado = true;
     if (portasPassadas >= 3) {

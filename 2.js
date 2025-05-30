@@ -29,14 +29,14 @@ function draw() {
     let volume = mic.getLevel();
     volumeSuavizado = lerp(volumeSuavizado, volume, 0.05);
 
-    // Mapeia volume suavizado para escala de 0 a 500
-    let pontos = map(volumeSuavizado, 0.01, 1, 0, 500);
-    pontos = constrain(pontos, 0, 500);
+    // Mapeia volume suavizado para escala de 0 a 1000
+    let pontos = map(volumeSuavizado, 0.01, 1, 0, 1000);
+    pontos = constrain(pontos, 0, 1000);
 
     // Aumenta pontuação devagar com limite
-    if (volumeSuavizado > 0.05 && pontuacao < 500) {
+    if (volumeSuavizado > 0.05 && pontuacao < 1000) {
         pontuacao += 1;
-        pontuacao = constrain(pontuacao, 0, 500);
+        pontuacao = constrain(pontuacao, 0, 1000);
     }
 
     // Barra de progresso
@@ -45,7 +45,7 @@ function draw() {
 
     fill(200, 0, 0);
     noStroke();
-    let larguraBarra = map(pontuacao, 0, 500, 0, 150);
+    let larguraBarra = map(pontuacao, 0, 1000, 0, 150);
     rect(width / 4, height - 25, larguraBarra, 25);
 
     fill(0);
@@ -66,13 +66,10 @@ function draw() {
 
         // LÓGICA FINAL DO JOGO
 if (!jogoTerminado && pontuacao === 500) {
-    if (pontuacao >= 250) {
-      localStorage.setItem('nivel3Desbloqueado', true);
-     } // verifica se a pontuação é suficiente para desbloquear o nível 3
     jogoTerminado = true;
+    localStorage.setItem('nivel3Desbloqueado', true);
     alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
     window.location.href = "3.html";
-
 } else if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
     jogoTerminado = true;
     if (portasPassadas >= 3) {
