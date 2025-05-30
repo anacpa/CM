@@ -40,3 +40,16 @@ canvas {
     width: 100px;  /* define um tamanho fixo ou como preferires */
     height: auto;
 }
+
+#temporizador {
+    position: fixed;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5); /* opcional: fundo translúcido */
+    padding: 8px 12px;
+    border-radius: 8px;
+    z-index: 1000;
+}
