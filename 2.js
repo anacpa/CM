@@ -68,13 +68,13 @@ function draw() {
 if (!jogoTerminado && pontuacao === 500) {
     jogoTerminado = true;
     alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
-    window.location.href = "2.html";
+    window.location.href = "3.html";
 
 } else if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
     jogoTerminado = true;
     if (portasPassadas >= 3) {
         alert("Parabéns! Passaste para o nível seguinte!");
-        window.location.href = "2.html";
+        window.location.href = "3.html";
     } else {
         alert("Tenta de novo! Não passaste portas suficientes.");
          location.reload();
