@@ -1,7 +1,7 @@
 let mic;
 let pontuacao = 0;
 let portasPassadas = 0;
-let tempoTotal = 180000; // 3 minutos em milissegundos
+let tempoTotal = 90000; // 1 minuto e 30 segundos em milissegundos
 let tempoInicio;
 let jogoTerminado = false;
 let volumeMinimoParaPassar = 0.05;
@@ -57,7 +57,7 @@ function draw() {
 
     if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
         jogoTerminado = true;
-        if (portasPassadas >= 3) {
+        if (portasPassadas >= 5) {
             alert("Parabéns! Passaste para o nível seguinte!");
             // window.location.href = "nivel2.html";
         } else {
@@ -74,7 +74,7 @@ function draw() {
     }
 }
 
-let doors = ['portas/1.gif', 'portas/2.gif', 'portas/3.gif'];
+let doors = ['open/1.svg', 'open/2.svg', 'open/3.svg','open/5.svg', 'open/6.svg', 'open/7.svg','open/8.svg', 'open/9.svg', 'open/4.svg'];
 let person = ['personagens/1.png', 'personagens/3.png', 'personagens/4.png'];
 let currentDoorImg, currentPersonImg;
 
