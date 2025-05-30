@@ -63,6 +63,9 @@ function draw() {
 
     // LÓGICA FINAL DO JOGO
 if (!jogoTerminado && pontuacao === 500) {
+    if (pontuacao >= 250) {
+    localStorage.setItem('nivel2Desbloqueado', true);
+  } // verifica se a pontuação é suficiente para desbloquear o nível 2
     jogoTerminado = true;
     alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
     window.location.href = "2.html";
@@ -70,6 +73,7 @@ if (!jogoTerminado && pontuacao === 500) {
 } else if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
     jogoTerminado = true;
     if (portasPassadas >= 3) {
+         localStorage.setItem('nivel2Desbloqueado', true); // verifica se a pontuação é suficiente para desbloquear o nível 2
         alert("Parabéns! Passaste para o nível seguinte!");
         window.location.href = "2.html";
     } else {
@@ -128,6 +132,3 @@ function tentarPassarPorta() {
     novaPorta();
 }
 
-if (pontuacao >= 250) {
-    localStorage.setItem('nivel2Desbloqueado', true);
-}

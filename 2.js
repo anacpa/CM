@@ -66,6 +66,9 @@ function draw() {
 
         // LÓGICA FINAL DO JOGO
 if (!jogoTerminado && pontuacao === 500) {
+    if (pontuacao >= 250) {
+      localStorage.setItem('nivel3Desbloqueado', true);
+     } // verifica se a pontuação é suficiente para desbloquear o nível 3
     jogoTerminado = true;
     alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
     window.location.href = "3.html";
@@ -73,6 +76,8 @@ if (!jogoTerminado && pontuacao === 500) {
 } else if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
     jogoTerminado = true;
     if (portasPassadas >= 3) {
+        // verifica se a pontuação é suficiente para desbloquear o nível 3
+        localStorage.setItem('nivel3Desbloqueado', true);
         alert("Parabéns! Passaste para o nível seguinte!");
         window.location.href = "3.html";
     } else {
@@ -130,6 +135,4 @@ function tentarPassarPorta() {
     novaPorta();
 }
 
-if (pontuacao >= 250) {
-    localStorage.setItem('nivel3Desbloqueado', true);
-}
+
