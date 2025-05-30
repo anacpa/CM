@@ -26,7 +26,7 @@ function draw() {
     clear();
 
     let volume = mic.getLevel();
-    let pontos = map(volume, 0.01, 0.2, 0, 20);
+    let pontos = map(volume, 0.01, 0.2, 0, 200);
     pontos = constrain(pontos, 0, 200); // maximo de pontos sendo 200
 
 
