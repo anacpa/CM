@@ -6,6 +6,7 @@ let tempoInicio;
 let jogoTerminado = false;
 let volumeMinimoParaPassar = 0.05;
 let gritoAtivo = false; // novo estado para controlar o grito
+let limitePassagem = volumeMinimoParaPassar;
 
 function millis() {
     return new Date().getTime();
