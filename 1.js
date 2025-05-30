@@ -47,6 +47,7 @@ function draw() {
 
 
     fill(0);
+    stroke(200, 0, 0);
     textAlign(CENTER);
     text(pontuacao, 85, height - 10);
 
