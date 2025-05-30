@@ -62,21 +62,29 @@ function draw() {
     document.getElementById("temporizador").innerText = timerTexto;
 
     // LÓGICA FINAL DO JOGO
-    if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
-        jogoTerminado = true;
-        if (portasPassadas >= 3) {
-            alert("Parabéns! Passaste para o nível seguinte!");
-        } else {
-            alert("Tenta de novo! Não passaste portas suficientes.");
-        }
-    } else if (!jogoTerminado) {
-        if (volumeSuavizado > volumeMinimoParaPassar) {
-            gritoAtivo = true;
-        } else if (gritoAtivo && volumeSuavizado <= volumeMinimoParaPassar) {
-            tentarPassarPorta();
-            gritoAtivo = false;
-        }
+if (!jogoTerminado && pontuacao >= 500) {
+    jogoTerminado = true;
+    alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
+    window.location.href = "2.html";
+
+} else if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
+    jogoTerminado = true;
+    if (portasPassadas >= 3) {
+        alert("Parabéns! Passaste para o nível seguinte!");
+        window.location.href = "2.html";
+    } else {
+        alert("Tenta de novo! Não passaste portas suficientes.");
     }
+
+} else if (!jogoTerminado) {
+    if (volumeSuavizado > limitePassagem) {
+        gritoAtivo = true;
+    } else if (gritoAtivo && volumeSuavizado <= limitePassagem) {
+        tentarPassarPorta();
+        gritoAtivo = false;
+    }
+}
+
 }
 
 
