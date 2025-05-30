@@ -21,57 +21,64 @@ function setup() {
     tempoInicio = millis();
     novaPorta();
 }
+let volumeSuavizado = 0;
 
 function draw() {
     clear();
 
     let volume = mic.getLevel();
-    let pontos = map(volume, 0, 1, 0, 100);
-    pontos = constrain(pontos, 0, 100);
 
-    if (volume > 0.05 && pontuacao < 500) {
-        pontuacao += int(pontos);
-        pontuacao = constrain(pontuacao, 0, 500); // escala de pontos de 0 a 500
+    // Suavização manual (exponencial)
+    volumeSuavizado = lerp(volumeSuavizado, volume, 0.05);
+
+    // Mapeia para escala de 0 a 500
+    let pontos = map(volumeSuavizado, 0.01, 0.3, 0, 500);
+    pontos = constrain(pontos, 0, 500);
+
+    // Aumenta a pontuação lentamente, com limite
+    if (volumeSuavizado > 0.05 && pontuacao < 500) {
+        pontuacao += 1; // ajusta esse valor se quiser mais rápido/lento
+        pontuacao = constrain(pontuacao, 0, 500);
     }
 
+    // BARRA DE PROGRESSO
     fill(255);
     text("POINTS", 90, height / 4 * 3);
 
     fill(200, 0, 0);
     noStroke();
-    let barraLargura = map(pontuacao, 0, 500, 0, 150); // 150 é o canvas width
-    rect(width / 4, height - 25, barraLargura, 25);
-
+    let larguraBarra = map(pontuacao, 0, 500, 0, 150); // usa pontuação real
+    rect(width / 4, height - 25, larguraBarra, 25);
 
     fill(0);
-    stroke(200, 0, 0);
     textAlign(CENTER);
     text(pontuacao, 85, height - 10);
 
+    // TEMPORIZADOR
     let tempoRestante = max(0, tempoTotal - (millis() - tempoInicio));
     let minutos = floor(tempoRestante / 60000);
     let segundos = floor((tempoRestante % 60000) / 1000);
     let timerTexto = nf(minutos, 2) + ':' + nf(segundos, 2);
     document.getElementById("temporizador").innerText = timerTexto;
 
+    // LÓGICA FINAL DO JOGO
     if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
         jogoTerminado = true;
-        if (portasPassadas >= 5) {
+        if (portasPassadas >= 3) {
             alert("Parabéns! Passaste para o nível seguinte!");
-            // window.location.href = "nivel2.html";
         } else {
             alert("Tenta de novo! Não passaste portas suficientes.");
         }
     } else if (!jogoTerminado) {
-        // Novo comportamento: só avança quando o jogador deixa de gritar
-        if (volume > volumeMinimoParaPassar) {
+        if (volumeSuavizado > volumeMinimoParaPassar) {
             gritoAtivo = true;
-        } else if (gritoAtivo && volume <= volumeMinimoParaPassar) {
+        } else if (gritoAtivo && volumeSuavizado <= volumeMinimoParaPassar) {
             tentarPassarPorta();
             gritoAtivo = false;
         }
     }
 }
+
 
 let doors = ['open/1.svg', 'open/2.svg', 'open/3.svg','open/5.svg', 'open/6.svg', 'open/7.svg','open/8.svg', 'open/9.svg', 'open/4.svg'];
 let person = ['personagens/1.png', 'personagens/3.png', 'personagens/4.png'];
