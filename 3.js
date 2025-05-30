@@ -1,7 +1,7 @@
 let mic;
 let pontuacao = 0;
 let portasPassadas = 0;
-let tempoTotal = 60000; // 3 minutos em milissegundos
+let tempoTotal = 30000; // 3 minutos em milissegundos
 let tempoInicio;
 let jogoTerminado = false;
 let volumeMinimoParaPassar = 0.05;
@@ -52,7 +52,7 @@ function draw() {
 
     if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
         jogoTerminado = true;
-        if (portasPassadas >= 10) {
+        if (portasPassadas >= 15) {
             alert("Parabéns! Passaste para o nível seguinte!");
             // window.location.href = "nivel2.html";
         } else {
