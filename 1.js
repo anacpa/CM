@@ -32,7 +32,7 @@ function draw() {
     volumeSuavizado = lerp(volumeSuavizado, volume, 0.05);
 
     // Mapeia para escala de 0 a 500
-    let pontos = map(volumeSuavizado, 0.01, 0.3, 0, 500);
+    let pontos = map(volumeSuavizado, 0.01, 1, 0, 500);
     pontos = constrain(pontos, 0, 500);
 
     // Aumenta a pontuação lentamente, com limite
