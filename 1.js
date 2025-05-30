@@ -15,11 +15,7 @@ function setup() {
     let canvas = createCanvas(150, 300);
     canvas.parent('jogo');
     mic = new p5.AudioIn();
-mic.start();
-mic.amp(1); // Garante que o microfone esteja na amplitude máxima
-mic.getLevel(0.1); // Aplica uma suavização de 0.1
-mic.smooth(0.1); // Aplica uma suavização adicional
-
+    mic.start();
     textAlign(CENTER, CENTER);
     textSize(24);
     tempoInicio = millis();
