@@ -22,29 +22,41 @@ function setup() {
     novaPorta();
 }
 
+let volumeSuavizado = 0;
+
 function draw() {
     clear();
 
-    let volume = mic.getLevel(); // ex: entre 0.0 e 0.2
-    let pontos = map(volume, 0.01, 0.2, 0, 10); // Máximo 10 pontos por ciclo
-    pontos = constrain(pontos, 0, 10); // Não deixa passar disso
+    let volume = mic.getLevel();
 
-    if (volume > 0.05 && pontuacao < 500) {
-        pontuacao += int(pontos);
+    // Suavização do volume (filtro exponencial)
+    volumeSuavizado = lerp(volumeSuavizado, volume, 0.1); // quanto menor, mais suave
+
+    // DEBUG opcional:
+    fill(255);
+    textAlign(LEFT);
+    textSize(14);
+    text("Volume: " + nf(volumeSuavizado, 1, 4), 10, 20);
+
+    // Escala ajustada para 0 a 500
+    let pontos = map(volumeSuavizado, 0.01, 0.15, 0, 500);
+    pontos = constrain(pontos, 0, 500);
+
+    if (volumeSuavizado > 0.05 && pontuacao < 500) {
+        pontuacao += int(pontos * 0.01); // aumentar devagar
         pontuacao = constrain(pontuacao, 0, 500);
     }
 
-    // Barra de volume (correspondente à pontuação atual)
+    // Medidor visual
     fill(200, 0, 0);
     noStroke();
-    let larguraBarra = map(pontuacao, 0, 500, 0, 150); // 150px de largura máxima
+    let larguraBarra = map(pontuacao, 0, 500, 0, 150); // compatível com pontuação
     rect(width / 4, height - 25, larguraBarra, 25);
 
-    // Texto
     fill(255);
     textAlign(CENTER);
-    text("POINTS", 90, height / 4 * 3);
-    fill(0);
+    textSize(18);
+    text("PONTOS", 90, height / 4 * 3);
     text(pontuacao, 85, height - 10);
 
     // Temporizador
