@@ -29,9 +29,9 @@ function draw() {
     let pontos = map(volume, 0, 1, 0, 100);
     pontos = constrain(pontos, 0, 100);
 
-    if (volume > 0.05 && pontuacao < 80) {
+    if (volume > 0.05 && pontuacao < 200) {
     pontuacao += int(pontos);
-    pontuacao = constrain(pontuacao, 0, 80); // escala de pontos de 0 a 80
+    pontuacao = constrain(pontuacao, 0, 200); // escala de pontos de 0 a 200
 }
 
 
@@ -40,7 +40,9 @@ function draw() {
 
     fill(200, 0, 0);
     noStroke();
-    rect(width / 4, height - 25, volume * 300, 25);
+    let barraLargura = map(pontuacao, 0, 200, 0, 150); // 150 é o canvas width
+    rect(width / 4, height - 25, barraLargura, 25);
+
 
     fill(0);
     textAlign(CENTER);
