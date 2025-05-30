@@ -64,10 +64,9 @@ window.addEventListener('load', () => {
 const imgNivel2 = document.getElementById('m2');
 const imgNivel3 = document.getElementById('m3');
 
-// Lê o estado de desbloqueio do armazenamento local, só bloqueia de novo se 
-const nivel2Desbloqueado = sessionStorage.getItem('nivel2Desbloqueado') === 'true';
-const nivel3Desbloqueado = sessionStorage.getItem('nivel3Desbloqueado') === 'true';
-
+// Lê o estado de desbloqueio do armazenamento local
+const nivel2Desbloqueado = localStorage.getItem('nivel2Desbloqueado') === 'true';
+const nivel3Desbloqueado = localStorage.getItem('nivel3Desbloqueado') === 'true';
 
 // Lógica para o nível 2
 if (nivel2Desbloqueado) {
@@ -93,24 +92,6 @@ if (nivel3Desbloqueado) {
     imgNivel3.style.pointerEvents = 'none';
 }
 
-});
-
-
-
-// === LIMPAR LOCALSTORAGE QUANDO FECHAR ABA ===
-let beforeUnloadTime = 0;
-
-window.addEventListener('beforeunload', function () {
-    beforeUnloadTime = new Date().getTime();
-});
-
-window.addEventListener('unload', function () {
-    const now = new Date().getTime();
-    if (now - beforeUnloadTime > 50) {
-        // Apaga apenas quando o utilizador fecha a aba
-        localStorage.removeItem('nivel2Desbloqueado');
-        localStorage.removeItem('nivel3Desbloqueado');
-    }
 });
 
 
