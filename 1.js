@@ -26,13 +26,13 @@ function draw() {
     clear();
 
     let volume = mic.getLevel();
-    let pontos = map(volume, 0.01, 0.2, 0, 200);
-    pontos = constrain(pontos, 0, 200); // maximo de pontos sendo 200
+    let pontos = map(volume, 0.01, 0.2, 0, 500);
+    pontos = constrain(pontos, 0, 500); // maximo de pontos sendo 200
 
 
-    if (volume > 0.05 && pontuacao < 200) {
+    if (volume > 0.05 && pontuacao < 500) {
     pontuacao += int(pontos);
-    pontuacao = constrain(pontuacao, 0, 200); // escala de pontos de 0 a 200
+    pontuacao = constrain(pontuacao, 0, 500); // escala de pontos de 0 a 500
 }
 
 
@@ -41,7 +41,7 @@ function draw() {
 
     fill(200, 0, 0);
     noStroke();
-    let barraLargura = map(pontuacao, 0, 200, 0, 150); // 150 é o canvas width
+    let barraLargura = map(pontuacao, 0, 500, 0, 150); // 150 é o canvas width
     rect(width / 4, height - 25, barraLargura, 25);
 
 
