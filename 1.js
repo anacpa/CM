@@ -74,6 +74,7 @@ if (!jogoTerminado && pontuacao >= 500) {
         window.location.href = "2.html";
     } else {
         alert("Tenta de novo! Não passaste portas suficientes.");
+         location.reload();
     }
 
 } else if (!jogoTerminado) {
