@@ -26,8 +26,8 @@ function draw() {
     clear();
 
     let volume = mic.getLevel();
-    let pontos = map(volume, 0, 1, 0, 500);
-    pontos = constrain(pontos, 0, 500);
+    let pontos = map(volume, 0, 1, 0, 1000);
+    pontos = constrain(pontos, 0, 1000);
 
 
 
