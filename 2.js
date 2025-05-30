@@ -129,3 +129,7 @@ function tentarPassarPorta() {
     portasPassadas++;
     novaPorta();
 }
+
+if (pontuacao >= 250) {
+    localStorage.setItem('nivel3Desbloqueado', true);
+}

@@ -41,6 +41,7 @@
 </main>
 
  <script>
+
 window.addEventListener('load', () => {
     const openRegras = document.getElementById('botaoQuestion');
     const contentRegras = document.getElementById('contentRegras');
@@ -55,7 +56,33 @@ window.addEventListener('load', () => {
     closeRegras.addEventListener('click', () => {
         contentRegras.classList.remove('show');
     });
+
+    // Desbloqueio de níveis
+    const nivel2Desbloqueado = localStorage.getItem('nivel2Desbloqueado') === 'true';
+    const nivel3Desbloqueado = localStorage.getItem('nivel3Desbloqueado') === 'true';
+
+
+    // Se o nível 2 estiver desbloqueado, muda a imagem
+    if (nivel2Desbloqueado) {
+        imgNivel2.src = 'resources/A_MAzul.svg'; // imagem com o monstro desbloqueado
+        imgNivel2.parentElement.href = '2.html';
+    } else {
+        imgNivel2.src = 'resources/MRosa.svg'; // imagem bloqueada
+        imgNivel2.parentElement.href = '#';
+        imgNivel2.style.opacity = 0.5;
+    }
+
+    // Se o nível 3 estiver desbloqueado, muda a imagem
+    if (nivel3Desbloqueado) {
+        imgNivel3.src = 'resources/A_MVermelho.svg'; // imagem com o monstro desbloqueado
+        imgNivel3.parentElement.href = '3.html';
+    } else {
+        imgNivel3.src = 'resources/MVermelho.svg';
+        imgNivel3.parentElement.href = '#';
+        imgNivel3.style.opacity = 0.5;
+    }
 });
+
 
  </script>
 </body>
