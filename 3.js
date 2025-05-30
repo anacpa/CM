@@ -73,9 +73,9 @@ function draw() {
     }
 }
 
-let doors = ['/open/1.svg', '/open/2.svg', '/open/3.svg','/open/5.svg', '/open/6.svg', '/open/7.svg'
-    ,'/open/8.svg', '/open/9.svg', '/open/4.svg'];
-let person = ['/personagens/1.png', '/personagens/3.png', '/personagens/4.png'];
+let doors = ['open/1.svg', 'open/2.svg', 'open/3.svg','open/5.svg', 'open/6.svg', 'open/7.svg'
+    ,'open/8.svg', 'open/9.svg', 'open/4.svg'];
+let person = ['personagens/1.png', 'personagens/3.png', 'personagens/4.png'];
 let currentDoorImg, currentPersonImg;
 
 function novaPorta() {
