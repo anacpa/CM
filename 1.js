@@ -25,30 +25,29 @@ function setup() {
 function draw() {
     clear();
 
-    let volume = mic.getLevel();
-    let pontos = map(volume, 0.01, 0.2, 0, 50000);
-    pontos = constrain(pontos, 0, 50000); 
-
+    let volume = mic.getLevel(); // ex: entre 0.0 e 0.2
+    let pontos = map(volume, 0.01, 0.2, 0, 10); // Máximo 10 pontos por ciclo
+    pontos = constrain(pontos, 0, 10); // Não deixa passar disso
 
     if (volume > 0.05 && pontuacao < 500) {
-    pontuacao += int(pontos);
-    pontuacao = constrain(pontuacao, 0, 500); // escala de pontos de 0 a 500
-}
+        pontuacao += int(pontos);
+        pontuacao = constrain(pontuacao, 0, 500);
+    }
 
-
-    fill(255);
-    text("POINTS", 90, height / 4 * 3);
-
+    // Barra de volume (correspondente à pontuação atual)
     fill(200, 0, 0);
     noStroke();
-    let barraLargura = map(pontuacao, 0, 500, 0, 150); // 150 é o canvas width
-    rect(width / 4, height - 25, barraLargura, 25);
+    let larguraBarra = map(pontuacao, 0, 500, 0, 150); // 150px de largura máxima
+    rect(width / 4, height - 25, larguraBarra, 25);
 
-
-    fill(0);
+    // Texto
+    fill(255);
     textAlign(CENTER);
+    text("POINTS", 90, height / 4 * 3);
+    fill(0);
     text(pontuacao, 85, height - 10);
 
+    // Temporizador
     let tempoRestante = max(0, tempoTotal - (millis() - tempoInicio));
     let minutos = floor(tempoRestante / 60000);
     let segundos = floor((tempoRestante % 60000) / 1000);
@@ -57,14 +56,12 @@ function draw() {
 
     if (!jogoTerminado && millis() - tempoInicio >= tempoTotal) {
         jogoTerminado = true;
-        if (portasPassadas >= 5) {
+        if (portasPassadas >= 3) {
             alert("Parabéns! Passaste para o nível seguinte!");
-            // window.location.href = "nivel2.html";
         } else {
             alert("Tenta de novo! Não passaste portas suficientes.");
         }
     } else if (!jogoTerminado) {
-        // Novo comportamento: só avança quando o jogador deixa de gritar
         if (volume > volumeMinimoParaPassar) {
             gritoAtivo = true;
         } else if (gritoAtivo && volume <= volumeMinimoParaPassar) {
@@ -73,6 +70,7 @@ function draw() {
         }
     }
 }
+
 
 let doors = ['open/1.svg', 'open/2.svg', 'open/3.svg','open/5.svg', 'open/6.svg', 'open/7.svg','open/8.svg', 'open/9.svg', 'open/4.svg'];
 let person = ['personagens/1.png', 'personagens/3.png', 'personagens/4.png'];
