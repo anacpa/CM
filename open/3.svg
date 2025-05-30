@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Camada_2" data-name="Camada 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 222.28 216.19">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ceb105;
+      }
+
+      .cls-2 {
+        fill: #fce227;
+      }
+
+      .cls-3 {
+        fill: #a35d08;
+      }
+
+      .cls-4 {
+        fill: #bc1d1d;
+      }
+
+      .cls-5 {
+        fill: #a5a5a5;
+      }
+    </style>
+  </defs>
+  <g id="portas_abertas" data-name="portas abertas">
+    <g id="_3" data-name="3">
+      <polygon class="cls-1" points="198.95 209.21 190.72 208.36 198.89 32.7 110.55 31.17 115.66 209.38 106.64 209.21 99.51 22.71 208.15 25.02 198.95 209.21"/>
+      <g>
+        <polygon class="cls-5" points="96.91 209.28 106.64 209.22 99.51 22.71 208.15 25.02 198.95 209.22 209.43 209.28 222.28 13.28 210.02 13.79 182.26 5.3 171.43 7.07 161.95 0 149.49 0 141.91 6.82 129.99 5.3 96.41 13.39 86.94 13.13 96.91 209.28"/>
+        <ellipse class="cls-4" cx="155.84" cy="9.19" rx="5.03" ry="4.42"/>
+      </g>
+      <polygon class="cls-2" points="99.93 22.71 0 28.61 10.55 216.19 106.64 209.21 99.93 22.71"/>
+      <ellipse class="cls-3" cx="19.84" cy="143.44" rx="6.75" ry="8.82" transform="translate(-69.06 29.14) rotate(-30)"/>
+    </g>
+  </g>
+</svg>

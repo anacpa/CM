@@ -24,17 +24,6 @@ function draw() {
     }
 
     fill(255);
-<<<<<<< HEAD
-    text("POINTS", 90, height/4*3);
-
-    fill(200, 0, 0);
-    noStroke();
-    rect(width/4, height-25, volume * 300, 25);
-
-    fill(0);
-    textAlign(CENTER);
-    text(pontuacao, 85, height-10);
-=======
     text("POINTS", 90, height / 4 * 3);
 
     fill(200, 0, 0);
@@ -44,6 +33,4 @@ function draw() {
     fill(0);
     textAlign(CENTER);
     text(pontuacao, 85, height - 10);
->>>>>>> 7a12fd6c13fe51aa507970ac87b86540a67040b1
 }
-

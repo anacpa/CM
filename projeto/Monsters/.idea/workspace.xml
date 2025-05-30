@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d839adef-d3c2-415c-a0d9-1fed05ae8910" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2uovF2pp13uY5QuykAtLGe4AG7t" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/Users/anall/OneDrive/Documentos/Uni2024-2025/2º Semestre/CM/git/CM",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\anall\OneDrive\Documentos\Uni2024-2025\2º Semestre\CM\Monsters\resources" />
+      <recent name="C:\Users\anall\OneDrive\Documentos\Uni2024-2025\2º Semestre\CM\Monsters\open" />
+      <recent name="C:\Users\anall\OneDrive\Documentos\Uni2024-2025\2º Semestre\CM\Monsters\portas" />
+      <recent name="C:\Users\anall\OneDrive\Documentos\Uni2024-2025\2º Semestre\CM\Monsters\personagens" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\anall\OneDrive\Documentos\Uni2024-2025\2º Semestre\CM\Monsters\resources" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
+        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d839adef-d3c2-415c-a0d9-1fed05ae8910" name="Changes" comment="" />
+      <created>1742927633825</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1742927633825</updated>
+      <workItem from="1742927634936" duration="5612000" />
+      <workItem from="1743796395328" duration="660000" />
+      <workItem from="1745950636289" duration="3345000" />
+      <workItem from="1745966826395" duration="2194000" />
+      <workItem from="1746000403969" duration="705000" />
+      <workItem from="1746113941963" duration="5164000" />
+      <workItem from="1746197179811" duration="125000" />
+      <workItem from="1746464540559" duration="1324000" />
+      <workItem from="1746468656019" duration="15169000" />
+      <workItem from="1746612590498" duration="4446000" />
+      <workItem from="1746631837350" duration="7686000" />
+      <workItem from="1746694861280" duration="508000" />
+      <workItem from="1746695588437" duration="31000" />
+      <workItem from="1746972511130" duration="4653000" />
+      <workItem from="1747156699466" duration="3468000" />
+      <workItem from="1747658012072" duration="14075000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
