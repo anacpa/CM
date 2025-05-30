@@ -26,8 +26,8 @@ function draw() {
     clear();
 
     let volume = mic.getLevel();
-    let pontos = map(volume, 0.01, 0.2, 0, 50);
-    pontos = constrain(pontos, 0, 50); // maximo de pontos sendo 200
+    let pontos = map(volume, 0.01, 0.2, 0, 50000);
+    pontos = constrain(pontos, 0, 50000); 
 
 
     if (volume > 0.05 && pontuacao < 500) {
