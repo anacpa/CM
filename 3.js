@@ -90,8 +90,8 @@ if (!jogoTerminado && pontuacao === 500) {
 
 }
 
-let doors = ['open/1.svg', 'open/2.svg', 'open/3.svg','open/5.svg', 'open/6.svg', 'open/7.svg'
-    ,'open/8.svg', 'open/9.svg', 'open/4.svg'];
+let doors = ['portas/1.svg', 'portas/2.svg', 'portas/3.svg','portas/5.svg', 'portas/6.svg', 'portas/7.svg'
+    ,'portas/8.svg', 'portas/9.svg', 'portas/4.svg'];
 let person = ['personagens/1.png', 'personagens/3.png', 'personagens/4.png'];
 let currentDoorImg, currentPersonImg;
 
