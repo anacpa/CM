@@ -63,7 +63,7 @@ function draw() {
     document.getElementById("temporizador").innerText = timerTexto;
 
         // LÓGICA FINAL DO JOGO
-if (!jogoTerminado && pontuacao >= 500) {
+if (!jogoTerminado && pontuacao === 500) {
     jogoTerminado = true;
     alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
     window.location.href = "2.html";

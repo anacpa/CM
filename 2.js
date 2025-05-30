@@ -65,7 +65,7 @@ function draw() {
     let limitePassagem = constrain(dificuldadeProporcional, 0.05, 0.2);
 
         // LÓGICA FINAL DO JOGO
-if (!jogoTerminado && pontuacao >= 500) {
+if (!jogoTerminado && pontuacao === 500) {
     jogoTerminado = true;
     alert("Parabéns! Atingiste a pontuação máxima! Pronto para o próximo nível?");
     window.location.href = "2.html";
