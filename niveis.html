@@ -7,8 +7,15 @@
 </head>
 <body>
 
-</body>
+
 <main>
+    <div id="regras">
+        <div id="botaoQuestion"><img src="imagens/Qbotao.svg" alt="botaoQuestion"></div>
+        <div id="contentRegras">
+            <img src="imagens/regras.svg" alt="contentTexto" class="content">
+            <img src="imagens/QbotaoClose.svg" alt="contentBotaoClose" id="botaoRegrasClose" class="content">
+        </div>
+    </div>
     <div id="seta">
         <a href="index.html">
             <img src="resources/seta.svg" alt="seta de andar para trás">
@@ -32,4 +39,24 @@
         </div>
     </div>
 </main>
+
+ <script>
+window.addEventListener('load', () => {
+    const openRegras = document.getElementById('botaoQuestion');
+    const contentRegras = document.getElementById('contentRegras');
+    const closeRegras = document.getElementById('botaoRegrasClose');
+
+    // Abrir
+    openRegras.addEventListener('click', () => {
+        contentRegras.classList.add('show');
+    });
+
+    // Fechar
+    closeRegras.addEventListener('click', () => {
+        contentRegras.classList.remove('show');
+    });
+});
+
+ </script>
+</body>
 </html>

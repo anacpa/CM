@@ -34,3 +34,38 @@ body {
  }
 
 
+
+ /* ======================== REGRAS ======================== */
+#contentRegras {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1050;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#contentRegras.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.content {
+    position: relative;
+    padding: 20px;
+}
+
+
+
+#botaoQuestion {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1100; /* maior que a seta e o contentRegras */
+    cursor: pointer;
+}
