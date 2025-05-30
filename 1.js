@@ -29,9 +29,11 @@ function draw() {
     let pontos = map(volume, 0, 1, 0, 100);
     pontos = constrain(pontos, 0, 100);
 
-    if (volume > 0.05) {
-        pontuacao += int(pontos);
-    }
+    if (volume > 0.05 && pontuacao < 80) {
+    pontuacao += int(pontos);
+    pontuacao = constrain(pontuacao, 0, 80); // escala de pontos de 0 a 80
+}
+
 
     fill(255);
     text("POINTS", 90, height / 4 * 3);
